@@ -1,0 +1,28 @@
+{
+  "name": "serverv2",
+  "version": "1.0.0",
+  "description": "A UMS System ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samnoon1971/ServerV2.git"
+  },
+  "keywords": [
+    "js",
+    "html",
+    "css",
+    "nodejs",
+    "expressjs",
+    "mongoose"
+  ],
+  "author": "S M Samnoon Abrar (1106004)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samnoon1971/ServerV2/issues"
+  },
+  "homepage": "https://github.com/samnoon1971/ServerV2#readme"
+}
