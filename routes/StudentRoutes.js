@@ -12,6 +12,9 @@ app.get('/', async (req, res) => {
 });
 
 
+app.get("/studentdashboard", (req, res) => {
+    res.render('./student/studentdashboard');
+})
 app.post("/", async (req, res) => {
     const student = new Student(req.body);
 
