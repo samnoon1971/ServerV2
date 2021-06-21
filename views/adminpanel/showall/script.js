@@ -16,7 +16,7 @@ $(document).ready(function () {
                     let dept = data[index].department;
                     let level = data[index].level;
                     let term = data[index].term;
-                   rows += "<tr><td>" + id + "</td><td>" + name + "</td><td>" + dept + "</td><td>" + level + "</td><td>" + term + "</td>";
+                   rows += "<tr><td style=\"text-align:center\">" + id + "</td><td style=\"text-align:center\">" + name + "</td><td style=\"text-align:center\">" + dept + "</td><td style=\"text-align:center\">" + level + "</td><td style=\"text-align:center\">" + term + "</td>";
                 }
                 console.log(rows);
                 $("#tblStudents tbody").append(rows);
