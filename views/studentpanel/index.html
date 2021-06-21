@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <meta name="author" content="Samnoon">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--
+  <script src="script.js"></script>
+  -->
   <meta name="description" content="">
 
   <!-- Tailwind -->
@@ -59,6 +61,48 @@
     <img class="object-cover w-full h-screen hidden md:block" src="./Baiust.jpg">
   </div>
 </div>
+<script>
+  $( document ).ready(function() {
+    console.log( "ready!" );
+    $("#submit").click(() => {
+      $(this).data('clicked', true);
+      // window.location.replace("./studentdashboard.html");
+      console.log("clicked");
+      function send() {
+        let student = {
+          id: $("#id").val().toString(),
+        }
+        $("#submit").html("Submitting");
 
+        $.ajax({
+          url: "http://localhost:3000/student/find/student",
+          type: "post",
+          dataType: "json",
+
+          contentType: "application/json",
+          success: function (data) {
+            const newData = data.password.toString();
+            const pass = $("#password").val().toString();
+            console.log(newData);
+            console.log(pass);
+            if(newData === pass){
+              localStorage.setItem("id", $("#id").val());
+
+              window.location.replace("studentdashboard/studentdashboard.html");
+            }
+            else{
+              alert("Wrong Credentials");
+              $("#id").val("");
+              $("#password").val("");
+            }
+          },
+          data: JSON.stringify(student)
+        });
+      }
+      send();
+    });
+
+  });
+</script>
 </body>
 </html>
