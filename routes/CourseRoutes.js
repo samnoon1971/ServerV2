@@ -39,4 +39,6 @@ app.get('/display', (req, res) => {
         });
 })
 
+app.get('/')
+
 module.exports = app;
