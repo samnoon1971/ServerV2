@@ -39,6 +39,23 @@ app.get('/display', (req, res) => {
         });
 })
 
-app.get('/')
+app.get('/find/levelterm', (req, res) => {
+    Course.find()
+        .sort({code: -1})
+        .then((course) => {
+            let courses = [];
+            course.forEach(element => {
+                if(element.level === req.body.level && element.term === req.body.term){
+                    courses.push(element);
+                }
+            });
+            res.status(200).send(courses);
+        })
+        .catch(error => {
+            res.status(500).send({
+                message: error.message || "Error Occured",
+            });
+        });
+});
 
 module.exports = app;
