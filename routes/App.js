@@ -11,6 +11,7 @@ app.use("/", require("./ViewEngines"));
 */
 app.use("/student", require("./StudentRoutes"));
 app.use("/course", require("./CourseRoutes"));
+app.use("/teacher", require("./TeacherRoutes"));
 
 
 

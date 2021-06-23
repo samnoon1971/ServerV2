@@ -17,6 +17,14 @@ const TeacherSchema = new Schema({
     designation: {
         type: String,
         required: true,
+    },
+    department: {
+        type: String,
+        required: true,
+    },
+    password: {
+        type: String,
+        required: true,
     }
 }, {timestamps: true});
 
