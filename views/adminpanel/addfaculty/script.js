@@ -4,7 +4,7 @@ $( document ).ready(function() {
     $("#back").click(() => {
         $(this).data("clicked", true);
         console.log("Clicked");
-        window.location.replace("../findstudent/findstudent.html");
+        window.location.replace("../teacherspanel/teacherspanel.html");
     })
     $("#reset").click(() => {
         $(this).data('clicked', true);
