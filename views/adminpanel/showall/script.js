@@ -23,7 +23,7 @@ $(document).ready(function () {
             },
             error: function(data) {
                 let err = jQuery.parseJSON(data.responseText);
-                alert("Message: " + err.Message);
+                alert("Message: " + err.message);
             }
         });
     }

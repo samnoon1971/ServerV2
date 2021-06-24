@@ -25,4 +25,23 @@ app.post('/', async (req, res) => {
         res.status(500).send(error);
     }
 })
+
+app.get('/finddept', (req, res) => {
+    Teacher.find()
+        .sort({code: -1})
+        .then(dept => {
+            let faculty = [];
+            dept.forEach(element => {
+                if(element.dept === req.body.dept){
+                    faculty.push(element);
+                }
+            });
+            res.status(200).send(faculty);
+        })
+        .catch(error => {
+            res.status(500).send({
+                message: error.message || "Error Occured",
+            });
+        });
+});
 module.exports = app;

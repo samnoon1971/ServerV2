@@ -37,7 +37,8 @@ $( document ).ready(function () {
                 $("#present").html(data.present_address);
                 $("#permenant").html(data.permanent_address);
                 $("#nationality").html(data.nationality);
-
+                localStorage.setItem("level", data.level);
+                localStorage.setItem("term", data.term);
             },
             data: JSON.stringify(student)
         });
