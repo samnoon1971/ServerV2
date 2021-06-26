@@ -59,7 +59,7 @@ $( document ).ready(function() {
                         $("#dept").val("");
                         $("#designation").val("");
                         $("#add").html("add");
-                    },
+                     },
                     data: JSON.stringify(teacher)
                 });
             }

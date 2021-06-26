@@ -2,11 +2,11 @@
 const app = require("express").Router();
 
 app.get("/studentlogin", (req, res) => {
-    res.render("./studentpanel/index");
+    res.render("./studentsection/index");
 })
 
 app.get("/studentdashboard/studentdashboard", (req, res) => {
-    res.render("./studentpanel/studentdashboard/studentdashboard");
+    res.render("./studentsection/studentdashboard/studentdashboard");
 })
 
 
