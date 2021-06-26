@@ -57,5 +57,22 @@ app.get('/find/levelterm', (req, res) => {
             });
         });
 });
+app.post("/delete", (req, res) => {
+    let curCode = req.body.code;
+
+    Course.findOneAndDelete({code: curCode}, (err, docs) => {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }
+        else{
+            console.log("Deleted course: ", docs);
+            res.send("Deleted");
+        }
+    });
+
+});
+
+
 
 module.exports = app;
