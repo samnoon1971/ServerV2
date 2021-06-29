@@ -20,7 +20,7 @@ A portal for university management
 
 ## Tech Stack
 
-**Client:** jQuery, TailwindCSS
+**Client:** HTML, CSS, jQuery, Bootstrap
 
 **Server:** Node, Express, MongoDB
 
