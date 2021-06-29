@@ -1,6 +1,6 @@
 
 
-# Server 2
+# Server v2
 
 A portal for university management
 
