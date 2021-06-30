@@ -1,5 +1,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
+    $("#dboxsuccess").hide();
+
     $("#id").val(localStorage.getItem("id"));
     $("#back").click(() => {
         $(this).data("clicked", true);
@@ -44,13 +46,14 @@ $( document ).ready(function() {
                     mobile: mobile,
                     designation: designation,
                 }
-                $("#add").html("Saving");
+
 
                 $.ajax({
                     url: "http://localhost:3000/teacher",
                     type: "post",
                     dataType: "json",
                     contentType: "application/json",
+
                     success: function (data) {
                         $("#name").val("");
                         $("#mobile").val("");
@@ -58,9 +61,19 @@ $( document ).ready(function() {
                         $("#pass").val("");
                         $("#dept").val("");
                         $("#designation").val("");
-                        $("#add").html("add");
+                        console.log(data);
+
+
+                            $("#dboxsuccess").show();
+                            $("html, body").animate({scrollTop: $("#dboxsuccess").offset().top}, "slow");
+                            console.log("Shown");
+
+                            $("#dboxsuccess").hide();
+
                      },
-                    data: JSON.stringify(teacher)
+
+                    data: JSON.stringify(teacher),
+
                 });
             }
             send();

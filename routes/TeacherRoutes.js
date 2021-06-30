@@ -16,15 +16,17 @@ app.get('/', async (req, res) => {
 })
 
 app.post('/', async (req, res) => {
-    const teacher = new Teacher(req.body);
+        const teacher = new Teacher(req.body);
 
-    try{
-        await teacher.save();
-        res.send(teacher);
-    }catch(error){
-        res.status(500).send(error);
-    }
+        try {
+            await teacher.save();
+            res.send(teacher);
+        } catch (error) {
+            res.status(500).send(error);
+        }
+
 })
+
 
 app.get('/finddept', (req, res) => {
     Teacher.find()
