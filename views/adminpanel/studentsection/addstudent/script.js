@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     console.log( "ready!" );
+    $("#dbox").hide();
     $("#id").val(localStorage.getItem("id"));
     $("#back").click(() => {
         $(this).data("clicked", true);
@@ -102,7 +103,6 @@ $( document ).ready(function() {
                    permanent_address: permanent,
                    current: current
                }
-               $("#add").html("Saving");
 
                $.ajax({
                    url: "http://localhost:3000/student",
@@ -135,7 +135,10 @@ $( document ).ready(function() {
                        $("#level").val("");
                        $("#term").val("");
                        $("#semester").val("");
-                       $("#add").html("add");
+
+                       $("#dbox").show();
+                       $("html, body").animate({scrollTop: $("#dbox").offset().top}, "slow");
+                       console.log("Shown");
                    },
                    data: JSON.stringify(student)
               });

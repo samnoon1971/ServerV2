@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const uniqueValidator = require('mongoose-unique-validator');
 const StudentSchema = new Schema({
     name: {
         type: String,
@@ -9,6 +9,15 @@ const StudentSchema = new Schema({
     id: {
         type: String,
         required: true,
+        unique: true,
+        validate: async (value) => {
+            try {
+                const result = await Student.findOne({ id: value })
+                if (result) throw new Error("duplicity detected: id :" + value);
+            } catch (error) {
+                throw new Error(error);
+            }
+        }
     },
     password: {
         type: String,
@@ -103,6 +112,6 @@ const StudentSchema = new Schema({
         required: true,
     }
 }, {timestamps: true});
-
+StudentSchema.plugin(uniqueValidator);
 const Student = mongoose.model("student", StudentSchema);
 module.exports = Student;
