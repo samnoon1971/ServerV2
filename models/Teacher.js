@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const uniqueValidator = require('mongoose-unique-validator');
 const TeacherSchema = new Schema({
     name: {
         type: String,
@@ -9,6 +9,15 @@ const TeacherSchema = new Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
+        validate: async (value) => {
+            try {
+                const result = await Teacher.findOne({ email: value })
+                if (result) throw new Error("duplicity detected: id :" + value);
+            } catch (error) {
+                throw new Error(error);
+            }
+        }
     },
     mobile: {
         type: String,
@@ -27,6 +36,6 @@ const TeacherSchema = new Schema({
         required: true,
     }
 }, {timestamps: true});
-
+TeacherSchema.plugin(uniqueValidator);
 const Teacher = mongoose.model("teacher", TeacherSchema);
 module.exports = Teacher;

@@ -23,20 +23,22 @@ app.post('/', (req, res) => {
 
 })
 
-app.get('/verify', (req, res) => {
-    Teacher.find()
-        .sort({email: -1})
-        .then(dept => {
-            dept.forEach(element => {
-                if(element.email === req.body.email){
-                    res.status(500).send();
-                }
-            })
-        })
+app.post("/deleteid", (req, res) => {
+    const Email = req.body.email;
+    console.log(Email);
+    Teacher.findOneAndDelete({email: Email}, (err, docs) => {
+        if(err){
+            console.log(err);
+            res.send(err);
+        }
+        else{
+            console.log("Deleted Teacher: ", docs);
+            res.send("Deleted");
+        }
+    });
+});
 
 
-    res.status(200);
-})
 app.get('/finddept', (req, res) => {
     Teacher.find()
         .sort({email: -1})
