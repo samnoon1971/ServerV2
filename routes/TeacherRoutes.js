@@ -15,22 +15,31 @@ app.get('/', async (req, res) => {
     }
 })
 
-app.post('/', async (req, res) => {
-        const teacher = new Teacher(req.body);
+app.post('/', (req, res) => {
 
-        try {
-            await teacher.save();
+            const teacher = new Teacher(req.body);
+            teacher.save();
             res.send(teacher);
-        } catch (error) {
-            res.status(500).send(error);
-        }
 
 })
 
+app.get('/verify', (req, res) => {
+    Teacher.find()
+        .sort({email: -1})
+        .then(dept => {
+            dept.forEach(element => {
+                if(element.email === req.body.email){
+                    res.status(500).send();
+                }
+            })
+        })
 
+
+    res.status(200);
+})
 app.get('/finddept', (req, res) => {
     Teacher.find()
-        .sort({code: -1})
+        .sort({email: -1})
         .then(dept => {
             let faculty = [];
             dept.forEach(element => {

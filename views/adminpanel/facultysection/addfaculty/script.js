@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
-    $("#dboxsuccess").hide();
 
+    $("#dbox").hide();
     $("#id").val(localStorage.getItem("id"));
     $("#back").click(() => {
         $(this).data("clicked", true);
@@ -64,13 +64,13 @@ $( document ).ready(function() {
                         console.log(data);
 
 
-                            $("#dboxsuccess").show();
-                            $("html, body").animate({scrollTop: $("#dboxsuccess").offset().top}, "slow");
-                            console.log("Shown");
+                        $("#dbox").show();
+                        $("html, body").animate({scrollTop: $("#dbox").offset().top}, "slow");
+                        console.log("Shown");
 
-                            $("#dboxsuccess").hide();
 
                      },
+
 
                     data: JSON.stringify(teacher),
 
