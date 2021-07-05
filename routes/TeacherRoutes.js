@@ -57,4 +57,23 @@ app.get('/finddept', (req, res) => {
             });
         });
 });
+
+app.post("/find/teacher",(req, res) => {
+    Teacher.find()
+        .sort({email: -1})
+        .then((teacher) => {
+            for(let current=0; current<teacher.length; current++){
+                if(teacher[current].email === req.body.email){
+                    res.status(200).send(teacher[current]);
+                    return;
+                }
+            }
+            res.status(500).send({message: "No teacher Found"});
+        })
+        .catch(error => {
+            res.status(500).send({
+                message: error.message || "Error Occurred",
+            });
+        });
+});
 module.exports = app;
