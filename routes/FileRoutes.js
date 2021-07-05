@@ -9,6 +9,7 @@ const fileStorageEngine = multer.diskStorage({
         cb(null, Date.now() + "__" + file.originalname)
     }
 })
+
 const upload = multer({storage: fileStorageEngine});
 
 app.post("/single", upload.single('doc'), (req, res) => {
