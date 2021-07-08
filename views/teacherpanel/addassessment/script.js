@@ -1,57 +1,20 @@
+const form = document.getElementById("form");
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
+form.addEventListener("submit", submitForm);
 
-        /*
-        let reader = new FileReader();
-
-        reader.onload = function(e) {
-            $('.image-upload-wrap').hide();
-
-            $('.file-upload-image').attr('src', e.target.result);
-            $('.file-upload-content').show();
-
-            $('.image-title').html(input.files[0].name);
-        };
-         reader.readAsDataURL(input.files[0]);
-
-         */
-        $('.image-upload-wrap').hide();
-
-        $('.file-upload-content').show();
-
-        $('.image-title').html(input.files[0].name);
-        let data = input.files[0];
-        $.ajax({
-            url: "https://localhost:3000/upload/single",
-            type: "POST",
-            contentType: false,
-            processData: false,
-            cache: false,
-            data: data,
-            success: function (res) {
-                alert(res);
-            },
-            error: function () {
-                alert("Error sending the file");
-            }
-        })
-
-
-    } else {
-        removeUpload();
+function submitForm(e) {
+    e.preventDefault();
+    const name = document.getElementById("name");
+    const files = document.getElementById("files");
+    const formData = new FormData();
+    formData.append("name", name.value);
+    for(let i =0; i < files.files.length; i++) {
+        formData.append("files", files.files[i]);
     }
+    fetch("http://localhost:3000/upload/multiple", {
+        method: 'post',
+        body: formData
+    })
+        .then((res) => console.log(res))
+        .catch((err) => ("Error occured", err));
 }
-
-function removeUpload() {
-    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-    $('.file-upload-content').hide();
-    $('.image-upload-wrap').show();
-}
-$('.image-upload-wrap').bind('dragover', function () {
-    $('.image-upload-wrap').addClass('image-dropping');
-});
-$('.image-upload-wrap').bind('dragleave', function () {
-    $('.image-upload-wrap').removeClass('image-dropping');
-});
-

@@ -4,40 +4,33 @@
     <meta charset="UTF-8">
     <title>Add assessment</title>
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
-        <div class="bg-green" style="text-align: center">
 
-            <h2 style="width: 50%; margin: 0 auto; text-align: center">University Management System</h2>
-            <h2 style="width: 50%; margin: 0 auto; text-align: center">Admin Menu</h2>
-        </div>
-     <div class="card-box">
+         <div class="bg-green" style="text-align: center">
 
-         <div class="file-upload">
-             <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add document</button>
-
-             <form class="image-upload-wrap" enctype="multipart/form-data">
-                 <input class="file-upload-input" type='file' onchange="readURL(this);" />
-                 <div class="drag-text">
-                     <h3>Drag and drop a file or select add document</h3>
-                 </div>
-             </form>
-             <div class="file-upload-content">
-                 <img class="file-upload-image" src="#" alt="your image" />
-                 <div class="image-title-wrap">
-                     <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                 </div>
-             </div>
+             <h2 style="width: 50%; margin: 0 auto; text-align: center">University Management System</h2>
+             <h2 style="width: 50%; margin: 0 auto; text-align: center">Assessment File Upload</h2>
          </div>
 
+            <h1>File Upload</h1>
+            <form id='form'>
+                <div class="input-group">
+                    <label for='name'>Your name</label>
+                    <input name='name' id='name' placeholder="Enter your name" />
+                </div>
+                <div class="input-group">
+                    <label for='files'>Select files</label>
+                    <input id='files' type="file" multiple>
+                </div>
+                <button id="submit" class="submit-btn" type='submit'>Upload</button>
+            </form>
 
-        </div>
      </div>
+    <script src="script.js"></script>
      <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-     <script src="script.js"></script>
+
 </body>
 </html>
