@@ -1,5 +1,5 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
+$(document).ready(function () {
+    console.log("ready!");
     $("#dbox").hide();
 
     $("#id").val(localStorage.getItem("id"));
@@ -33,11 +33,10 @@ $( document ).ready(function() {
         let credit = $("#credit").val();
 
         // console.log(dob);
-        if(name === "" || level === "" || term === "" || optional === ""
-            || dept === "" || credit === "" || code == ""){
+        if (name === "" || level === "" || term === "" || optional === ""
+            || dept === "" || credit === "" || code == "") {
             alert("Please fill all the data fields");
-        }
-        else{
+        } else {
             function send() {
                 let course = {
                     name: name,
@@ -72,12 +71,11 @@ $( document ).ready(function() {
                     data: JSON.stringify(course)
                 });
             }
+
             send();
         }
 
     });
-
-
 
 
 });

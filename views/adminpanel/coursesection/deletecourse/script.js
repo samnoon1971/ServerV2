@@ -16,10 +16,9 @@ $(document).ready(function () {
         let searchbar = $("#searchbar").val();
         console.log(searchbar);
         // console.log(dob);
-        if(searchbar === ""){
+        if (searchbar === "") {
             alert("Please enter course code");
-        }
-        else {
+        } else {
             function send() {
                 let course = {
                     code: searchbar,
@@ -44,9 +43,7 @@ $(document).ready(function () {
             send();
         }
 
-        });
-
-
+    });
 
 
 });
