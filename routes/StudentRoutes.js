@@ -132,7 +132,7 @@ app.post("/student/login", (req, res) => {
 /*
  Delete student by ID
  */
-app.post("/deleteid", (req, res) => {
+app.post("/delete", (req, res) => {
     let curID = req.body.id;
 
     Student.findOneAndDelete({id: curID}, (err, docs) => {
