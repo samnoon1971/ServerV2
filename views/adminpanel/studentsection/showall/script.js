@@ -1,6 +1,7 @@
 $(document).ready(function () {
     console.log("Ready");
     let dept = localStorage.getItem("dept");
+    localStorage.clear();
     function send() {
         let sendData = {
             dept: dept,
