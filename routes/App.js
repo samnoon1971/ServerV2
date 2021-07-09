@@ -14,7 +14,7 @@ app.use("/upload", require("./FileRoutes"));
 app.use("/student", require("./StudentRoutes"));
 app.use("/course", require("./CourseRoutes"));
 app.use("/teacher", require("./TeacherRoutes"));
-
+app.use("/stats", require("./StatisticsRoutes"));
 
 
 module.exports = app;

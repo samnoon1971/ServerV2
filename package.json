@@ -27,6 +27,7 @@
   "homepage": "https://github.com/samnoon1971/ServerV2#readme",
   "dependencies": {
     "bootstrap": "^5.0.0-alpha1",
+    "chart.js": "^3.4.1",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
