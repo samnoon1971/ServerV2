@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
 
 })
 
-app.post("/deleteid", (req, res) => {
+app.post("/delete", (req, res) => {
     const Email = req.body.email;
     console.log(Email);
     Teacher.findOneAndDelete({email: Email}, (err, docs) => {
