@@ -40,6 +40,46 @@ app.get("/display",(req, res) => {
         });
 });
 
+
+
+app.post("/display/select",(req, res) => {
+
+    let curDept = req.body.dept;
+    if(curDept === "All") {
+        Student.find()
+            .sort({id: -1})
+            .then((student) => {
+                res.status(200).send(student);
+            })
+            .catch(error => {
+                res.status(500).send({
+                    message: error.message || "Error Occurred",
+                });
+            });
+    }
+    else {
+        Student.find()
+            .sort({code: -1})
+            .then(student => {
+                let sendData = [];
+                student.forEach(element => {
+                    if (element.department === curDept) {
+                        sendData.push(element);
+                    }
+                })
+                console.log(sendData);
+                res.status(200).send(sendData);
+
+            })
+            .catch(error => {
+                res.status(500).send({
+                    message: error.message || "Error Occured",
+                });
+            });
+    }
+});
+
+
 /*
  student find: returns a single student info with his/her id
  */
