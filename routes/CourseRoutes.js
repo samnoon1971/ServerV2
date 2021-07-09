@@ -8,9 +8,9 @@ const Course = require("../models/Course");
 
 app.get('/', async (req, res) => {
     const course = await Course.find({});
-    try{
+    try {
         res.send(course);
-    }catch(error){
+    } catch (error) {
         res.status(500).send(error);
     }
 })
@@ -18,15 +18,17 @@ app.get('/', async (req, res) => {
 app.post('/', async (req, res) => {
     const course = new Course(req.body);
 
-    try{
+    try {
         await course.save();
         res.send(course);
-    }catch(error){
+    } catch (error) {
         res.status(500).send(error);
     }
 })
-
-app.get('/display', (req, res) => {
+/*
+Displays all Courses
+ */
+app.get('/display/all', (req, res) => {
     Course.find()
         .sort({code: -1})
         .then((course) => {
@@ -38,6 +40,45 @@ app.get('/display', (req, res) => {
             });
         });
 })
+/*
+Displays courses department-wise
+ */
+app.post('/display/select', (req, res) => {
+    let curDept = req.body.dept;
+    console.log(curDept);
+    if (curDept === "All") {
+        Course.find()
+            .sort({code: -1})
+            .then((course) => {
+                res.status(200).send(course);
+            })
+            .catch(error => {
+                res.status(500).send({
+                    message: error.message || "Error Occured",
+                });
+            });
+    } else {
+        Course.find()
+            .sort({code: -1})
+            .then(course => {
+                let sendData = [];
+                course.forEach(element => {
+                    if (element.department === curDept) {
+                        sendData.push(element);
+                    }
+                })
+                console.log(sendData);
+                res.status(200).send(sendData);
+
+            })
+            .catch(error => {
+                res.status(500).send({
+                    message: error.message || "Error Occured",
+                });
+            });
+    }
+})
+
 
 app.get('/find/levelterm', (req, res) => {
     Course.find()
@@ -45,7 +86,7 @@ app.get('/find/levelterm', (req, res) => {
         .then((course) => {
             let courses = [];
             course.forEach(element => {
-                if(element.level === req.body.level && element.term === req.body.term){
+                if (element.level === req.body.level && element.term === req.body.term) {
                     courses.push(element);
                 }
             });
@@ -61,11 +102,10 @@ app.post("/delete", (req, res) => {
     let curCode = req.body.code;
 
     Course.findOneAndDelete({code: curCode}, (err, docs) => {
-        if(err){
+        if (err) {
             console.log(err);
             res.send(err);
-        }
-        else{
+        } else {
             console.log("Deleted course: ", docs);
             res.send("Deleted");
         }
