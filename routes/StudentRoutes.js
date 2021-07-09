@@ -66,6 +66,14 @@ app.post("/find/student",(req, res) => {
   dept find: returns all students info in a particular department.
  */
 
+app.post("/update", async (req, res) => {
+    const update = req.body;
+    const filter = {id: req.body.id};
+    let doc = await Student.findOneAndUpdate(filter, update, {
+        new: true
+    });
+    console.log(doc);
+})
 app.post("/find/dept",(req, res) => {
     Student.find()
         .sort({id: -1})

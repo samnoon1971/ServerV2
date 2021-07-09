@@ -24,5 +24,13 @@ $(document).ready(function () {
         window.location.replace("../addstudent/addstudent.html");
         console.log(enteredID);
     })
+    $("#update").click(() => {
+        $(this).data("clicked", true);
+        console.log("Clicked");
+        let enteredID = $("#searchbar").val();
+        localStorage.setItem("id", enteredID);
+        window.location.replace("../updatestudent/updatestudent.html");
+        console.log(enteredID);
+    })
 
 })
