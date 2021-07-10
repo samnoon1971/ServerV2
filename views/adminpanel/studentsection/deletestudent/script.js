@@ -17,7 +17,7 @@ $(document).ready(function () {
         console.log(searchbar);
         // console.log(dob);
         if (searchbar === "") {
-            alert("Please enter course code");
+            alert("Please enter student ID");
         } else {
             function send() {
                 let student = {
