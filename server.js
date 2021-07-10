@@ -6,7 +6,7 @@ const api = require('./routes/App');
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-const PORT = process.env.PORT;
+const PORT = 3000;
 const URI = process.env.URL;
 app.all("/*", function(req, res, next){
     res.header('Access-Control-Allow-Origin', '*');
