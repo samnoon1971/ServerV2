@@ -2,7 +2,7 @@ $( document ).ready(function() {
     console.log( "ready!" );
     $("#dbox").hide();
     let id = localStorage.getItem("id");
-
+    localStorage.clear();
     function send() {
         let student = {
 

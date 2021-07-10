@@ -2,6 +2,7 @@ $( document ).ready(function() {
     console.log( "ready!" );
     $("#dbox").hide();
     $("#id").val(localStorage.getItem("id"));
+    localStorage.clear();
     $("#back").click(() => {
         $(this).data("clicked", true);
         console.log("Clicked");

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     console.log("Ready");
     let id = localStorage.getItem("id");
-
+    localStorage.clear();
     function send() {
         let student = {
 
