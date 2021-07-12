@@ -30,7 +30,6 @@ function clearFileInput(id)
     newInput.name = oldInput.name;
     newInput.className = oldInput.className;
     newInput.style.cssText = oldInput.style.cssText;
-    // TODO: copy any other relevant attributes
 
     oldInput.parentNode.replaceChild(newInput, oldInput);
 }
