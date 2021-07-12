@@ -12,12 +12,18 @@ const fileStorageEngine = multer.diskStorage({
 
 const upload = multer({storage: fileStorageEngine});
 
-app.post("/single", upload.single('doc'), (req, res) => {
+/*
+Upload single file
+ */
+app.post("/single", upload.single('files'), (req, res) => {
     console.log(req.file);
     res.send("Single file upload complete");
 })
 
-app.post("/multiple", upload.array("docs", 5), (req, res) => {
+/*
+Upload Multiple Files
+ */
+app.post("/multiple", upload.array("files", 5), (req, res) => {
     console.log(req.files);
     res.send("Multiple files upload complete");
 })

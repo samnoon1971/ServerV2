@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Add assessment</title>
@@ -9,20 +9,27 @@
 <body>
     <div class="container">
 
-         <div class="bg-green" style="text-align: center">
+        <div class="bg-green" style="text-align: center">
 
-             <h2 style="width: 50%; margin: 0 auto; text-align: center">University Management System</h2>
-             <h2 style="width: 50%; margin: 0 auto; text-align: center">Assessment File Upload</h2>
-         </div>
+            <h2 style="width: 100%; margin: 0 auto; text-align: center">Teacher Panel</h2>
 
-            <h1>File Upload</h1>
+        </div>
+        <div class="bg-green" style="text-align: center">
+
+            <h2 style="width: 100%; margin: 0 auto; text-align: center">Assessment File Upload</h2>
+
+        </div>
+
+
+        <h1>File Upload</h1>
             <form id='form'>
                 <div class="input-group">
-                    <label for='name'>Your name</label>
-                    <input name='name' id='name' placeholder="Enter your name" />
+                    <label>Course Code</label>
+                    <input type="text" id="code" placeholder="Enter Course Code" class="form-control mb-3 required">
+
                 </div>
                 <div class="input-group">
-                    <label for='files'>Select files</label>
+                    <label for='files'>Select assessment files</label>
                     <input id='files' type="file" multiple>
                 </div>
                 <button id="submit" class="submit-btn" type='submit'>Upload</button>

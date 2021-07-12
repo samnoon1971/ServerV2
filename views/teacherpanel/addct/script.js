@@ -6,9 +6,10 @@ function submitForm(e) {
     e.preventDefault();
    const files = document.getElementById("files");
    const name = document.getElementById("code").value;
+   const ct = document.getElementById("ct").value;
     const formData = new FormData();
 
-    formData.append("files", files.files[0], "Assessment" + "_" + name);
+    formData.append("files", files.files[0], ct + "_" + "CT" + "_" + name);
 
     fetch("http://localhost:3000/upload/single", {
         method: 'post',
