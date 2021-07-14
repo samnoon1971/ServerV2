@@ -2,8 +2,7 @@ $( document ).ready(function() {
     console.log( "ready!" );
     $("#submit").click(() => {
         $(this).data('clicked', true);
-       // window.location.replace("./studentdashboard.html");
-        console.log("clicked");
+      console.log("clicked");
         function send() {
             let student = {
                 id: $("#id").val().toString(),
@@ -23,7 +22,7 @@ $( document ).ready(function() {
                     console.log(pass);
                     if(newData === pass){
                         localStorage.setItem("id", $("#id").val());
-                        window.location.replace("./studentdashboard/studentdashboard.html");
+                        window.location.replace("./studentmenu/studentmenu.html");
                     }
                     else{
                         alert("Wrong Credentials");

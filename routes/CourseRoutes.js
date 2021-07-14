@@ -79,6 +79,48 @@ app.post('/display/select', (req, res) => {
     }
 })
 
+app.post("/display/current", (req, res) => {
+    Course.find()
+        .sort({code: -1})
+        .then(course => {
+            let sendData = [];
+            course.forEach(element => {
+                if (element.department === req.body.dept && element.level === req.body.level && element.term === req.body.term) {
+                    sendData.push(element);
+                }
+            })
+            console.log(sendData);
+            res.status(200).send(sendData);
+
+        })
+        .catch(error => {
+            res.status(500).send({
+                message: error.message || "Error Occured",
+            });
+        });
+})
+
+
+app.post("/display/previous", (req, res) => {
+    Course.find()
+        .sort({code: -1})
+        .then(course => {
+            let sendData = [];
+            course.forEach(element => {
+                if (element.department === req.body.dept && element.level < req.body.level && element.term < req.body.term) {
+                    sendData.push(element);
+                }
+            })
+            console.log(sendData);
+            res.status(200).send(sendData);
+
+        })
+        .catch(error => {
+            res.status(500).send({
+                message: error.message || "Error Occured",
+            });
+        });
+})
 
 app.get('/find/levelterm', (req, res) => {
     Course.find()
