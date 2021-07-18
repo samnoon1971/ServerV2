@@ -9,7 +9,7 @@ function submitForm(e) {
    const ct = document.getElementById("ct").value;
     const formData = new FormData();
 
-    formData.append("files", files.files[0], ct + "_" + "CT" + "_" + name);
+    formData.append("files", files.files[0], ct + "_" + "CT" + "_" + name + ".pdf");
 
     fetch("http://localhost:3000/upload/single", {
         method: 'post',
