@@ -12,7 +12,7 @@ function getDirectories(path, callback) {
     })
 }
 
-app.get("check", (req, res) => {
+app.get("/check", (req, res) => {
     fs.exists(fileFolder, function fileExists(exists) {
         console.log("Exists? = ", exists);
         if (exists) {
