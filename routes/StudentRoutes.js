@@ -77,7 +77,7 @@ app.post("/display/select",(req, res) => {
                     if (element.department === curDept && element.level === level && element.term === term) {
                         sendData.push(element);
                     }
-                    else if(element.department === curDept && element.level === "All"){
+                    else if(element.department === curDept && level === "All"){
                         sendData.push(element);
                     }
                 })
