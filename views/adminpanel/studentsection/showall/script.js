@@ -1,10 +1,14 @@
 $(document).ready(function () {
     console.log("Ready");
     let dept = localStorage.getItem("dept");
+    let level = localStorage.getItem("level");
+    let term = localStorage.getItem("term");
     localStorage.clear();
     function send() {
         let sendData = {
             dept: dept,
+            level: level,
+            term: term
         }
         $.ajax({
             url: "http://localhost:3000/student/display/select",

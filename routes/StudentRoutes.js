@@ -45,11 +45,22 @@ app.get("/display",(req, res) => {
 app.post("/display/select",(req, res) => {
 
     let curDept = req.body.dept;
+    let level = req.body.level;
+    let term = req.body.term;
     if(curDept === "All") {
         Student.find()
             .sort({id: -1})
             .then((student) => {
-                res.status(200).send(student);
+                let sendData = [];
+                student.forEach(element => {
+                    if(level === "All"){
+                        sendData.push(element);
+                    }
+                    else if(element.level === level && element.term === term){
+                        sendData.push(element);
+                    }
+                })
+                res.status(200).send(sendData);
             })
             .catch(error => {
                 res.status(500).send({
@@ -63,7 +74,10 @@ app.post("/display/select",(req, res) => {
             .then(student => {
                 let sendData = [];
                 student.forEach(element => {
-                    if (element.department === curDept) {
+                    if (element.department === curDept && element.level === level && element.term === term) {
+                        sendData.push(element);
+                    }
+                    else if(element.department === curDept && element.level === "All"){
                         sendData.push(element);
                     }
                 })
