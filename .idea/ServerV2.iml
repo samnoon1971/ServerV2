@@ -11,5 +11,8 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="tailwindcss" level="application" />
     <orderEntry type="library" name="jquery-3.6.0" level="application" />
+    <orderEntry type="library" name="jquery-3.2.1.slim" level="application" />
+    <orderEntry type="library" name="popper.js" level="application" />
+    <orderEntry type="library" name="jquery-1.11.1" level="application" />
   </component>
 </module>
