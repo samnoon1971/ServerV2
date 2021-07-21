@@ -1,0 +1,26 @@
+.dimension{
+width:350px;
+height:340px;
+}
+a{
+color: tomato ;
+}
+.nav-tabs .nav-link{
+border: 3px solid black;
+margin-right:2rem ;
+padding-left: 3rem;
+padding-right: 3rem;
+}
+.nav-tabs .nav-link:hover{
+border: 3px solid red;
+}
+html,body{
+    height: 100%;
+}
+body{
+    background-color: whitesmoke;
+}
+.form-login{
+    background: rgba(236,240,241,.35);
+    border-radius: 10px;
+}

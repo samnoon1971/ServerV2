@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>HOME || LOGIN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex">
+<div class="container">
+  <h2 class="mb-3"> You Are Log In As : </h2>
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#student">
+      <!-- STUDENT ICON URL -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>  Student</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#Faculty">
+      <!-- feculty icon link -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+      </svg>  Faculty</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#Administrator">
+      <!-- Administrator ICON URL -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-badge-ad-fill" viewBox="0 0 16 16">
+        <path d="M11.35 8.337c0-.699-.42-1.138-1.001-1.138-.584 0-.954.444-.954 1.239v.453c0 .8.374 1.248.972 1.248.588 0 .984-.44.984-1.2v-.602zm-5.413.237-.734-2.426H5.15l-.734 2.426h1.52z"/>
+        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm6.209 6.32c0-1.28.694-2.044 1.753-2.044.655 0 1.156.294 1.336.769h.053v-2.36h1.16V11h-1.138v-.747h-.057c-.145.474-.69.804-1.367.804-1.055 0-1.74-.764-1.74-2.043v-.695zm-4.04 1.138L3.7 11H2.5l2.013-5.999H5.9L7.905 11H6.644l-.47-1.542H4.17z"/>
+      </svg>  Administrator</a></li>
+  </ul>
+  <!-- Student Login tab part -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="student">
+      <div class="row border g-0 rounded shadow-sm">
+        <div class="col p-4">
+          <form action="" class="form-login text-center">
+
+            <h3>Student Login</h3>
+            <input type="text" placeholder="Enter your ID" class="form-control mb-3 required" id="studentname">
+            <input type="password" placeholder="Enter your Password" class="form-control mb-3" id="studentpass">
+
+            <button class="btn btn-primary w-100" type="submit" id="studentbutton">Login</button>
+          </form>
+
+        </div>
+        <div class="col-auto">
+          <img src="images/s2.jpg" class="img-thumbnail dimension">
+        </div>
+      </div>
+    </div>
+    <!-- Student Login tab part ends here  -->
+
+    <!-- Feculty Login part starts here  -->
+    <div class="tab-pane " id="Faculty">
+      <div class="row border g-0 rounded shadow-sm">
+        <div class="col p-4">
+          <form action="" class="form-login text-center">
+            <h3>Faculty Login</h3>
+            </p><input type="text" placeholder="Enter your ID" class="form-control mb-3 required" id="facultyname">
+            </p><input type="Password" placeholder="Enter your Password" class="form-control mb-3" id="facultypass">
+
+            <button class="btn btn-secondary w-100" type="submit" id="facultybutton">Login</button>
+          </form>
+
+        </div>
+        <div class="col-auto">
+          <img src="images/f5.jpg" class="img-thumbnail dimension">
+        </div>
+      </div>
+    </div>
+    <!-- Feculty Login part ends here  -->
+    <!-- Administrator part starts here -->
+    <div class="tab-pane " id="Administrator">
+      <div class="row border g-0 rounded shadow-sm">
+        <div class="col p-4">
+          <form action="" class="form-login text-center">
+            <h3>Administrator Login</h3>
+            </p><input type="text" placeholder="Enter your Name" class="form-control mb-3 required" id="adminname">
+            </p><input type="Password" placeholder="Enter your Password" class="form-control mb-3" id="adminpass">
+
+            <button class="btn btn-success w-100" type="submit" id="adminbutton">Login</button>
+          </form>
+
+        </div>
+        <div class="col-auto">
+          <img src="images/a1.png" class="img-thumbnail dimension">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
