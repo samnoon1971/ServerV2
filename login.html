@@ -178,7 +178,7 @@
                         console.log(newData);
                         console.log(pass);
                         if (newData === pass) {
-                            localStorage.setItem("id", $("#id").val());
+                            localStorage.setItem("id", $("#studentname").val());
                             window.location.replace("./views/studentpanel/studentmenu/studentmenu.html");
                         } else {
                             alert("Wrong Credentials");
@@ -218,7 +218,7 @@
                         console.log(newData);
                         console.log(pass);
                         if (newData === pass) {
-                            localStorage.setItem("email", $("#email").val());
+                            localStorage.setItem("email", $("#facultyname").val());
 
                             window.location.replace("./views/teacherpanel/teacherdashboard/teacherdashboard.html");
                         } else {
