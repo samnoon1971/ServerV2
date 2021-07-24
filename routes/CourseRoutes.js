@@ -43,6 +43,66 @@ app.get('/display/all', (req, res) => {
 /*
 Displays courses department-wise
  */
+
+
+
+app.post("/display/select",(req, res) => {
+
+    let curDept = req.body.dept;
+    let level = req.body.level;
+    let term = req.body.term;
+    if(curDept === "All") {
+        Course.find()
+            .sort({code: -1})
+            .then((course) => {
+                let sendData = [];
+                course.forEach(element => {
+                    if(level === "All"){
+                        sendData.push(element);
+                    }
+                    else if(element.level === level && element.term === term){
+                        sendData.push(element);
+                    }
+                })
+                res.status(200).send(sendData);
+            })
+            .catch(error => {
+                res.status(500).send({
+                    message: error.message || "Error Occurred",
+                });
+            });
+    }
+    else {
+        Course.find()
+            .sort({code: -1})
+            .then(course => {
+                let sendData = [];
+                course.forEach(element => {
+                    if (element.department === curDept && element.level === level && element.term === term) {
+                        sendData.push(element);
+                    }
+                    else if(element.department === curDept && level === "All"){
+                        sendData.push(element);
+                    }
+                })
+                console.log(sendData);
+                res.status(200).send(sendData);
+
+            })
+            .catch(error => {
+                res.status(500).send({
+                    message: error.message || "Error Occured",
+                });
+            });
+    }
+});
+
+
+
+
+
+
+/*
 app.post('/display/select', (req, res) => {
     let curDept = req.body.dept;
     console.log(curDept);
@@ -78,6 +138,8 @@ app.post('/display/select', (req, res) => {
             });
     }
 })
+*/
+
 
 app.post("/display/current", (req, res) => {
     Course.find()

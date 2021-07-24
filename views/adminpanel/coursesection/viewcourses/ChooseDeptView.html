@@ -44,6 +44,25 @@
                         </select>
                     </form>
                 </div>
+
+                <div class="inner" style="text-align: center">
+                    <form>
+                        <label for="searchbar">Select Level & Term</label>
+                        <select class="form-control" id="ltbar">
+                            <option>All</option>
+                            <option>L-4 T-2</option>
+                            <option>L-4 T-1</option>
+                            <option>L-3 T-2</option>
+                            <option>L-3 T-1</option>
+                            <option>L-2 T-2</option>
+                            <option>L-2 T-1</option>
+                            <option>L-1 T-2</option>
+                            <option>L-1 T-1</option>
+
+                        </select>
+                    </form>
+                </div>
+
             </div>
         </div>
         <div class="container">
@@ -75,8 +94,48 @@
             console.log("Clicked");
             let dept = $("#searchbar").val();
             localStorage.setItem("dept", dept);
+            let lt = $("#ltbar").val();
+            if(lt === "L-4 T-2"){
+                localStorage.setItem("level", "4");
+                localStorage.setItem("term", "II");
+            }
+            else if(lt === "L-4 T-1"){
+                localStorage.setItem("level", "4");
+                localStorage.setItem("term", "I");
+            }
+            else if(lt === "L-3 T-2"){
+                localStorage.setItem("level", "3");
+                localStorage.setItem("term", "II");
+            }
+            else if(lt === "L-3 T-1"){
+                localStorage.setItem("level", "3");
+                localStorage.setItem("term", "I");
+            }
+            else if(lt === "L-2 T-2"){
+                localStorage.setItem("level", "2");
+                localStorage.setItem("term", "II");
+            }
+            else if(lt === "L-2 T-1"){
+                localStorage.setItem("level", "2");
+                localStorage.setItem("term", "I");
+            }
+            else if(lt === "L-1 T-2"){
+                localStorage.setItem("level", "1");
+                localStorage.setItem("term", "II");
+            }
+            else if(lt === "L-1 T-1"){
+                localStorage.setItem("level", "1");
+                localStorage.setItem("term", "I");
+            }
+            else{
+                localStorage.setItem("level", "All");
+                localStorage.setItem("term", "All");
+            }
+
             window.location.replace("./viewcourse.html");
         })
+
+
 
         $("#back").click(() => {
             $(this).data("clicked", true);
