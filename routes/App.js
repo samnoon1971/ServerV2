@@ -11,6 +11,7 @@ app.use(express.static("docs"));
 /*
 app.use("/", require("./ViewEngines"));
 */
+app.use("/registration", require("./RegRoutes"));
 app.use("/download", require("./DownloadRoutes"));
 app.use("/upload", require("./UploadRoutes"));
 app.use("/student", require("./StudentRoutes"));

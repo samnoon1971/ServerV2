@@ -179,6 +179,9 @@
                         console.log(pass);
                         if (newData === pass) {
                             localStorage.setItem("id", $("#studentname").val());
+                            localStorage.setItem("level", data.level.toString());
+                            localStorage.setItem("term", data.term.toString());
+                            localStorage.setItem("dept", data.department.toString());
                             window.location.replace("./views/studentpanel/studentmenu/studentmenu.html");
                         } else {
                             alert("Wrong Credentials");

@@ -8,24 +8,12 @@ const RegSchema = new Schema({
         unique: true,
         validate: async (value) => {
             try {
-                const result = await Course.findOne({ code: value })
+                const result = await Course.findOne({ id: value })
                 if (result) throw new Error("duplicity detected: id :" + value);
             } catch (error) {
                 throw new Error(error);
             }
         }
-    },
-    department: {
-        type: String,
-        required: true,
-    },
-    level: {
-        type: String,
-        required: true,
-    },
-    term: {
-        type: String,
-        required: true,
     },
     courses: [String],
 }, {timestamps: true});
