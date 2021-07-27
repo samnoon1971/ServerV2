@@ -17,12 +17,12 @@
         <div class="bg-green" style="text-align: center">
 
             <h2 style="width: 50%; margin: 0 auto; text-align: center">University Management System</h2>
-            <h2 style="width: 50%; margin: 0 auto; text-align: center">Courses Panel</h2>
+            <h2 style="width: 50%; margin: 0 auto; text-align: center">Show Faculty Panel</h2>
         </div>
         <div class="bg-gray-800 pt-1">
             <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-2 shadow text-2xl text-white">
                 <div class="flex justify-center bg-orange flex text-center">
-                    <h3 class="font-bold pl-2">Choose Courses</h3>
+                    <h3 class="font-bold pl-2">Choose Faculty</h3>
                 </div>
             </div>
         </div>
@@ -45,23 +45,6 @@
                     </form>
                 </div>
 
-                <div class="inner" style="text-align: center">
-                    <form>
-                        <label for="searchbar">Select Level & Term</label>
-                        <select class="form-control" id="ltbar">
-                            <option>All</option>
-                            <option>L-4 T-2</option>
-                            <option>L-4 T-1</option>
-                            <option>L-3 T-2</option>
-                            <option>L-3 T-1</option>
-                            <option>L-2 T-2</option>
-                            <option>L-2 T-1</option>
-                            <option>L-1 T-2</option>
-                            <option>L-1 T-1</option>
-
-                        </select>
-                    </form>
-                </div>
 
             </div>
         </div>
@@ -94,45 +77,8 @@
             console.log("Clicked");
             let dept = $("#searchbar").val();
             localStorage.setItem("dept", dept);
-            let lt = $("#ltbar").val();
-            if(lt === "L-4 T-2"){
-                localStorage.setItem("level", "4");
-                localStorage.setItem("term", "II");
-            }
-            else if(lt === "L-4 T-1"){
-                localStorage.setItem("level", "4");
-                localStorage.setItem("term", "I");
-            }
-            else if(lt === "L-3 T-2"){
-                localStorage.setItem("level", "3");
-                localStorage.setItem("term", "II");
-            }
-            else if(lt === "L-3 T-1"){
-                localStorage.setItem("level", "3");
-                localStorage.setItem("term", "I");
-            }
-            else if(lt === "L-2 T-2"){
-                localStorage.setItem("level", "2");
-                localStorage.setItem("term", "II");
-            }
-            else if(lt === "L-2 T-1"){
-                localStorage.setItem("level", "2");
-                localStorage.setItem("term", "I");
-            }
-            else if(lt === "L-1 T-2"){
-                localStorage.setItem("level", "1");
-                localStorage.setItem("term", "II");
-            }
-            else if(lt === "L-1 T-1"){
-                localStorage.setItem("level", "1");
-                localStorage.setItem("term", "I");
-            }
-            else{
-                localStorage.setItem("level", "All");
-                localStorage.setItem("term", "All");
-            }
 
-            window.location.replace("./viewcourse.html");
+            window.location.replace("./showfaculty.html");
         })
 
 
@@ -140,7 +86,7 @@
         $("#back").click(() => {
             $(this).data("clicked", true);
             console.log("Clicked");
-            window.location.replace("../coursecontrol/coursesmenu.html");
+            window.location.replace("../facultymenu.html");
         })
 
     })

@@ -1,11 +1,14 @@
 $(document).ready(function () {
     console.log("Ready");
-
+    let dept = localStorage.getItem("dept");
+    localStorage.clear();
     function send() {
-
+        let sendData = {
+            dept: dept,
+        }
         $.ajax({
-            url: "http://localhost:3000/teacher",
-            type: "get",
+            url: "http://localhost:3000/teacher/finddept",
+            type: "POST",
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
@@ -24,7 +27,8 @@ $(document).ready(function () {
             error: function(data) {
                 let err = jQuery.parseJSON(data.responseText);
                 alert("Message: " + err.message);
-            }
+            },
+            data: JSON.stringify(sendData),
         });
     }
     send();

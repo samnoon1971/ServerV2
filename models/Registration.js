@@ -9,7 +9,7 @@ const RegSchema = new Schema({
         validate: async (value) => {
             try {
                 const result = await Course.findOne({ id: value })
-                if (result) throw new Error("duplicity detected: id :" + value);
+                if (result) throw new Error("Already Registered for current semester, id :" + value);
             } catch (error) {
                 throw new Error(error);
             }

@@ -33,4 +33,13 @@ $(document).ready(function () {
         console.log(enteredID);
     })
 
+    $("#reg").click(() => {
+        $(this).data("clicked", true);
+        console.log("Clicked");
+        let enteredID = $("#searchbar").val();
+        localStorage.setItem("id", enteredID);
+        window.location.replace("../registrationsection/viewreg.html");
+        console.log(enteredID);
+    })
+
 })

@@ -39,13 +39,16 @@ app.post("/delete", (req, res) => {
 });
 
 
-app.get('/finddept', (req, res) => {
+app.post('/finddept', (req, res) => {
     Teacher.find()
         .sort({email: -1})
         .then(dept => {
             let faculty = [];
             dept.forEach(element => {
-                if(element.dept === req.body.dept){
+                if(element.department === req.body.dept){
+                    faculty.push(element);
+                }
+                else if("All" === req.body.dept){
                     faculty.push(element);
                 }
             });

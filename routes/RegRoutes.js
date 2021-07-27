@@ -1,5 +1,6 @@
 const app = require("express").Router();
 const Registration = require("../models/Registration");
+const Student = require("../models/Student");
 
 
 app.post("/add", async (req, res) => {
@@ -33,6 +34,27 @@ app.post("/search",(req, res) => {
         });
 });
 
+
+
+app.post("/student",(req, res) => {
+    Registration.find()
+        .sort({id: -1})
+        .then((student) => {
+            for(let current=0; current<student.length; current++){
+                if(student[current].id === req.body.id){
+                    console.log(student[current]);
+                    res.status(200).send(student[current]);
+                    return;
+                }
+            }
+            res.status(500).send({message: "No Student Found"});
+        })
+        .catch(error => {
+            res.status(500).send({
+                message: error.message || "Error Occurred",
+            });
+        });
+});
 
 
 module.exports = app;
