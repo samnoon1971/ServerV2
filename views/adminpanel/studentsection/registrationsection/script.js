@@ -22,6 +22,7 @@ $(document).ready(function () {
                     rows += "<tr><td style=\"text-align:center\">" + name + "</td>";
                 }
                 console.log(rows);
+                $("#id").append("Student ID: " + id);
                 $("#tblStudents tbody").append(rows);
             },
             /*
