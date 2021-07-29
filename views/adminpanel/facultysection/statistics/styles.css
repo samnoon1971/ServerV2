@@ -6,7 +6,16 @@ body{
     height: 420px;
     margin: 0 auto;
 }
+.column {
+    float: left;
+    width: 50%;
+}
 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .pie-chart-container {
     height: 360px;
     width: 360px;

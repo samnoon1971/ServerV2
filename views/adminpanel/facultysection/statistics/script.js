@@ -2,7 +2,6 @@
 $(document).ready(function () {
     console.log("Ready");
     let ctx1 = $("#pie-chartcanvas-1");
-    let ctx2 = $("#pie-chartcanvas-2");
 
     let options = {
         responsive: true,
@@ -33,7 +32,13 @@ $(document).ready(function () {
 
             success: function (data) {
                 console.log(data);
-                var data1 = {
+                $("#csedata").append("CSE : " + data.cse);
+                $("#eeedata").append("EEE : " + data.eee);
+                $("#cedata").append("CE : " + data.ce);
+                $("#bbadata").append("BBA : " + data.bba);
+                $("#englishdata").append("English : " + data.english);
+                $("#lawdata").append("Law : " + data.law);
+                let data1 = {
                     labels: ["CSE", "EEE", "CE", "BBA", "English", "Law"],
                     datasets: [
                         {
@@ -43,7 +48,7 @@ $(document).ready(function () {
                                 "#DEB887",
                                 "#A9A9A9",
                                 "#DC143C",
-                                "#F4A460",
+                                "#F4C460",
                                 "#2E8B57",
                                 "#3E8B23"
                             ],
@@ -60,31 +65,7 @@ $(document).ready(function () {
                     ]
                 };
 
-                //pie chart data
-                var data2 = {
-                    labels: ["match1", "match2", "match3", "match4", "match5"],
-                    datasets: [
-                        {
-                            label: "TeamB Score",
-                            data: [20, 35, 40, 60, 50],
-                            backgroundColor: [
-                                "#FAEBD7",
-                                "#DCDCDC",
-                                "#E9967A",
-                                "#F5DEB3",
-                                "#9ACD32"
-                            ],
-                            borderColor: [
-                                "#E9DAC6",
-                                "#CBCBCB",
-                                "#D88569",
-                                "#E4CDA2",
-                                "#89BC21"
-                            ],
-                            borderWidth: [1, 1, 1, 1, 1]
-                        }
-                    ]
-                };
+
 
                 chart1 = new Chart(ctx1, {
                     type: "pie",

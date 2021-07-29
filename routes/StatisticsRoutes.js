@@ -9,23 +9,12 @@ app.get("/", (req, res) => {
     let l1 = 0, l2 = 0, l3 = 0, l4 = 0;
     let totalStudents = 0, totalFaculty = 0, totalCourses = 0;
     let paid = 0, unpaid = 0, partialPaid = 0;
-    Teacher.find()
-        .sort({email: -1})
-        .then(teacher => {
-            totalFaculty = teacher.length;
-        })
-        .then(
-            Course.find()
-                .sort({code: -1})
-                .then(course => {
-                    totalCourses = course.length;
-                })
-        )
-        .then(
+
             Student.find()
                 .sort({id: -1})
                 .then(student => {
                     totalStudents = student.length;
+                    console.log(totalStudents);
                     student.forEach(current => {
                         if(current.level === "4"){
                             l4++;
@@ -73,7 +62,7 @@ app.get("/", (req, res) => {
 
 
                     })
-                }))
+                })
         .then( ()=> {
             let data = {
                 cse: cse,
@@ -86,10 +75,10 @@ app.get("/", (req, res) => {
                 l3: l3,
                 l2: l2,
                 l1: l1,
-                totalCourses: totalCourses,
+
                 totalStudents: totalStudents,
-                totalFaculty: totalFaculty,
             }
+            console.log(data);
             res.status(200).send(data);
         })
         .catch(error => {
