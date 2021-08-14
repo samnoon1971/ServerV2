@@ -66,3 +66,24 @@ body{
 .bg-red {
     background-color: #d9534f !important;
 }
+
+.bg-lightgreen{
+    background-color: #92ed68 !important;
+}
+
+
+.bg-mati{
+    background-color: #923d66 !important;
+}
+
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

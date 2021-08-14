@@ -6,6 +6,7 @@ $(document).ready(function () {
     let term = localStorage.getItem("term");
     localStorage.clear();
     console.log(dept);
+
     function send() {
         let sendData = {
             dept: dept,

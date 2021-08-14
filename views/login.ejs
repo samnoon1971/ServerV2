@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="/public/loginStyle" rel="stylesheet">
+    <script src="/public/jquery-3.6.0.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="/public/logo.png" type="image/icon type">
+
+    <link href="/public/styles.css" rel="stylesheet">
+    <link href="/public/themes/bootstrap-3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="/public/themes/bootstrap-3/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div class="container">
+    <div class="card-header" style="text-align: center">
+        <img src="/public/logo.png" alt="BAIUST">
+        <h2 style="width: 50%; margin: 0 auto; text-align: center">BAIUST Server Login</h2>
+    </div>
+    <br>
+</div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-student">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="#" class="active" id="student-form-link">Student</a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" id="faculty-form-link">Faculty</a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" id="admin-form-link">Admin</a>
+                        </div>
+
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="student-form" action="" role="form" style="display: block;">
+                                <div class="form-group">
+                                    <input type="number" name="username" id="studentname" tabindex="1"
+                                           class="form-control" placeholder="ID" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="studentpass" tabindex="2"
+                                           class="form-control" placeholder="Password">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <button type="submit" name="studentbutton" id="studentbutton" tabindex="4"
+                                                    class="form-control btn btn-warning">Student Login
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form id="admin-form" action="" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="text" name="username" id="adminname" tabindex="1" class="form-control"
+                                           placeholder="Username" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="adminpass" tabindex="2"
+                                           class="form-control" placeholder="Password">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <button type="submit" name="adminbutton" id="adminbutton" tabindex="4"
+                                                    class="form-control btn btn-danger">Admin Login
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                            <form id="faculty-form" action="" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="email" name="email" id="facultyname" tabindex="1" class="form-control"
+                                           placeholder="Email Address" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="facultypass" tabindex="2"
+                                           class="form-control" placeholder="Password">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <button type="submit" name="facultybutton" id="facultybutton" tabindex="4"
+                                                    class="form-control btn btn-success">Faculty Login
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+
+        $('#student-form-link').click(function (e) {
+            $("#student-form").delay(200).fadeIn(200);
+            $("#admin-form").fadeOut(200);
+            $('#admin-form-link').removeClass('active');
+            $(this).addClass('active');
+            $("#faculty-form").fadeOut(200);
+            $('#faculty-form-link').removeClass('active');
+
+            e.preventDefault();
+        });
+        $('#admin-form-link').click(function (e) {
+            $("#admin-form").delay(200).fadeIn(200);
+            $("#student-form").fadeOut(200);
+            $('#student-form-link').removeClass('active');
+            $("#faculty-form").fadeOut(200);
+            $('#faculty-form-link').removeClass('active');
+
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        $('#faculty-form-link').click(function (e) {
+            $("#faculty-form").delay(200).fadeIn(200);
+            $("#student-form").fadeOut(200);
+            $('#student-form-link').removeClass('active');
+            $("#admin-form").fadeOut(200);
+
+            $('#admin-form-link').removeClass('active');
+
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        console.log("ready!");
+        $("#studentbutton").click(() => {
+            event.preventDefault();
+            $(this).data('clicked', true);
+            console.log("clicked");
+
+            function send() {
+                let student = {
+                    id: $("#studentname").val().toString(),
+                }
+                $("#studentbutton").html("Submitting");
+
+                $.ajax({
+                    async: true,
+                    url: "http://localhost:3000/student/find/student",
+                    type: "post",
+                    dataType: "json",
+
+                    contentType: "application/json",
+                    success: function (data) {
+                        const newData = data.password.toString();
+                        const pass = $("#studentpass").val().toString();
+                        console.log(newData);
+                        console.log(pass);
+                        if (newData === pass) {
+                            localStorage.setItem("id", $("#studentname").val());
+                            localStorage.setItem("level", data.level.toString());
+                            localStorage.setItem("term", data.term.toString());
+                            localStorage.setItem("dept", data.department.toString());
+                            window.location.replace("/views/student");
+                        } else {
+                            alert("Wrong Credentials");
+                            $("#studentname").val("");
+                            $("#studentpass").val("");
+                        }
+                    },
+                    data: JSON.stringify(student)
+                });
+            }
+
+            send();
+        });
+
+
+        $("#facultybutton").click(() => {
+            event.preventDefault();
+            $(this).data('clicked', true);
+            console.log("clicked");
+
+            function send() {
+                let teacher = {
+                    email: $("#facultyname").val().toString(),
+                }
+                $("#facultybutton").html("Submitting");
+
+                $.ajax({
+                    async: true,
+                    url: "http://localhost:3000/teacher/find/teacher",
+                    type: "post",
+                    dataType: "json",
+
+                    contentType: "application/json",
+                    success: function (data) {
+                        const newData = data.password.toString();
+                        const pass = $("#facultypass").val().toString();
+                        console.log(newData);
+                        console.log(pass);
+                        if (newData === pass) {
+                            localStorage.setItem("email", $("#facultyname").val());
+
+                            window.location.replace("/views/teacher");
+                        } else {
+                            alert("Wrong Credentials");
+                            $("#facultyname").val("");
+                            $("#facultypass").val("");
+                        }
+                    },
+                    data: JSON.stringify(teacher)
+                });
+            }
+
+            send();
+        });
+
+
+        $("#adminbutton").click(() => {
+            event.preventDefault();
+            $(this).data('clicked', true);
+            // window.location.replace("./studentdashboard.html");
+            console.log("clicked");
+            if ($("#adminname").val() === "admin" && $("#adminpass").val() === "pass") {
+                console.log("HOISE");
+                //   window.location.replace(".././adminpanel/admincontrol/adminmenu.html");
+
+                window.location.replace("/views/admin/dashboard");
+                console.log("done");
+            } else {
+                $("#adminname").val("");
+                $("#adminpass").val("");
+
+                alert("Wrong Input");
+            }
+        });
+
+
+    });
+</script>
+</body>
+</html>

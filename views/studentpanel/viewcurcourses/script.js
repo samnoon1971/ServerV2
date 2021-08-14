@@ -5,6 +5,7 @@ $(document).ready(function () {
     let level = localStorage.getItem("level");
     let term = localStorage.getItem("term");
     console.log(dept);
+
     function send() {
         let sendData = {
             dept: dept,

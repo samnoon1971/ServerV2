@@ -2,6 +2,7 @@ $(document).ready(function () {
     console.log("Ready");
     let id = localStorage.getItem("id");
     localStorage.clear();
+
     function send() {
         let student = {
 
@@ -46,11 +47,12 @@ $(document).ready(function () {
             data: JSON.stringify(student)
         });
     }
+
     send();
     $("#back").click(() => {
         $(this).data("clicked", true);
         console.log("Clicked");
-        window.location.replace("../findstudent/findstudent.html");
+        window.location.replace("/views/admin/student");
     })
 
 })

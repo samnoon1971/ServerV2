@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+
+    <script src="/public/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="/public/logo.png" type="image/icon type">
+
+    <link rel="stylesheet" href="/public/themes/css/bootstrap.min.css">
+
+
+    <script src="/public/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="/public/statstyle.css">
+    <link rel="stylesheet" href="/public/styles.css">
+    <script src="/views/adminpanel/facultysection/statistics/script.js"></script>
+</head>
+<body>
+
+<div class="bg-green" style="text-align: center">
+
+    <h2 style="width: 50%; margin: 0 auto; text-align: center">University Management System</h2>
+    <h2 style="width: 50%; margin: 0 auto; text-align: center">Statistics Menu</h2>
+</div>
+<div class="row">
+    <div class="column">
+        <div class="chart-container" style="text-align: center">
+            <h2 class="card-body">Student Statistics</h2>
+            <div class="pie-chart-container">
+                <canvas id="pie-chartcanvas-1"></canvas>
+            </div>
+
+        </div>
+    </div>
+    <div class="column">
+        <div class="chart-container" style="text-align: center">
+            <h2 class="card-body">Students By Department</h2>
+            <div class="card-box-footer" style="text-align: center">
+                <h3 id="csedata"></h3>
+
+                <h3 id="eeedata"></h3>
+
+                <h3 id="cedata"></h3>
+
+                <h3 id="bbadata"></h3>
+
+                <h3 id="lawdata"></h3>
+
+                <h3 id="englishdata"></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

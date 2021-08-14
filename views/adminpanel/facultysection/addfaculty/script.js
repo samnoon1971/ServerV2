@@ -1,12 +1,12 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
+$(document).ready(function () {
+    console.log("ready!");
 
     $("#dbox").hide();
     $("#id").val(localStorage.getItem("id"));
     $("#back").click(() => {
         $(this).data("clicked", true);
         console.log("Clicked");
-        window.location.replace("../teacherspanel/teacherspanel.html");
+        window.location.replace("/views/admin/faculty/dashboard");
     })
     $("#reset").click(() => {
         $(this).data('clicked', true);
@@ -32,11 +32,10 @@ $( document ).ready(function() {
         let designation = $("#designation").val();
 
         // console.log(dob);
-        if(name === "" || mobile === "" || email === "" || pass === ""
-        || dept === "" || designation === ""){
+        if (name === "" || mobile === "" || email === "" || pass === ""
+            || dept === "" || designation === "") {
             alert("Please fill all the data fields");
-        }
-        else{
+        } else {
             function send() {
                 let teacher = {
                     name: name,
@@ -69,19 +68,18 @@ $( document ).ready(function() {
                         console.log("Shown");
 
 
-                     },
+                    },
 
 
                     data: JSON.stringify(teacher),
 
                 });
             }
+
             send();
         }
 
     });
-
-
 
 
 });

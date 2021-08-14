@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Student</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <script src="/public/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/public/themes/bootstrap-3/css/bootstrap.min.css">
+    <link rel="icon" href="/public/logo.png" type="image/icon type">
+
+    <link rel="stylesheet" href="/public/themes/fontawesome/css/fontawesome.min.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/public/styles.css" rel="stylesheet">
+    <script src="/public/Chart.bundle.min.js"></script>
+    <script src="/views/adminpanel/studentsection/findstudent/script.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="bg-green" style="text-align: center">
+
+        <h4 style="width: 50%; margin: 0 auto; text-align: center">Bangladesh Army International University of Science and Technology</h4>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-12">
+            <div class="card-box bg-blue">
+
+                <div class="inner" style="text-align: center">
+                    <form>
+                        <label for="searchbar">ID</label>
+                        <input type="number" class="form-control" id="searchbar" placeholder="Enter...">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="column">
+        <div class="col-lg-3 col-sm-12">
+            <div class="card-box bg-green">
+                <div class="inner">
+                    <h3>Show student</h3>
+                    <p></p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                </div>
+                <a href="/views/admin/student/show" class="card-box-footer" id="show">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-sm-12">
+            <div class="card-box bg-red">
+                <div class="inner">
+                    <h3>Remove Student</h3>
+                    <p></p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                </div>
+                <a href="/views/admin/student/remove" class="card-box-footer" id="delete">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-12">
+            <div class="card-box bg-blue">
+                <div class="inner">
+                    <h3>Add Student</h3>
+                    <p></p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                </div>
+                <a href="/views/admin/student/add" class="card-box-footer" id="add">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        </div>
+        <div class="column">
+        <div class="col-lg-3 col-sm-12">
+            <div class="card-box bg-mati">
+                <div class="inner">
+                    <h3>Update Student</h3>
+                    <p></p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-umbrella" aria-hidden="true"></i>
+                </div>
+                <a href="/views/admin/student/update" class="card-box-footer" id="update">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-sm-12">
+            <div class="card-box bg-orange">
+                <div class="inner">
+                    <h3>Registration Info</h3>
+                    <p></p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                </div>
+                <a href="/views/admin/student/registration" class="card-box-footer" id="reg">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-lg-1 col-sm-12">
+            <div class="card-box bg-red">
+                <div class="inner">
+                    <a href="/views/admin/dashboard" class="card-box-footer" id="back">Back to previous menu <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

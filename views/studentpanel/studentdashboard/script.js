@@ -1,7 +1,8 @@
-$( document ).ready(function () {
+$(document).ready(function () {
     console.log("Ready");
 
     let id = localStorage.getItem("id");
+
     function send() {
         let student = {
             id: id,
@@ -16,11 +17,10 @@ $( document ).ready(function () {
             contentType: "application/json",
             success: function (data) {
                 console.log(data);
-                $("#current_header").html(data.current);
                 $("#payment_header").html(data.payment);
                 $("#cgpa_header").html(data.cgpa);
                 $("#name").html(data.name);
-                $("#cgpa").html(data.cgpa);
+                $("#dept").html(data.department);
                 $("#id").html(data.id);
                 $("#religion").html(data.religion);
                 $("#blood").html(data.blood_group);
@@ -43,6 +43,7 @@ $( document ).ready(function () {
             data: JSON.stringify(student)
         });
     }
+
     send();
 
 });

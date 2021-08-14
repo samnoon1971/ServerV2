@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Dashboard</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <script src="/public/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="/public/logo.png" type="image/icon type">
+
+    <link rel="stylesheet" href="/public/themes/bootstrap-3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/public/themes/fontawesome/css/fontawesome.min.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="/public/Chart.bundle.min.js"></script>
+    <script src="/views/adminpanel/studentsection/updatestudent/script.js"></script>
+</head>
+
+
+<body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">
+
+<div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
+    <div class="bg-gray-800 pt-1">
+        <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-2 shadow text-2xl text-white">
+            <div class="flex justify-center flex text-center">
+                <h3 class="font-bold pl-2">Update Student Details</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dbox" class="alert alert-warning alert-success" role="alert">
+        <strong>Added!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+
+    <div class="flex flex-wrap">
+
+        <div class="w-full md:w-1/2 xl:w p-6">
+
+
+            <div class="flex flex-col">
+                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+
+                                <thead class="bg-gray-100">
+
+                                </thead>
+
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Name:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="name" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    CGPA:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="cgpa" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    ID:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="id" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Department:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="dept" type="text" class="text-lg text-gray-900">
+                                            <option>Select department</option>
+                                            <option>CSE</option>
+                                            <option>EEE</option>
+                                            <option>CE</option>
+                                            <option>BBA</option>
+                                            <option>Law</option>
+                                            <option>English</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Religion:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="religion" type="text" class="text-lg text-gray-900">
+                                            <option>Select religion</option>
+                                            <option>Islam</option>
+                                            <option>Hinduism</option>
+                                            <option>Buddhism</option>
+                                            <option>Christianity</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Blood Group:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="blood" type="text" class="text-lg text-gray-900">
+                                            <option>Select blood group</option>
+                                            <option>O+</option>
+                                            <option>O-</option>
+                                            <option>AB+</option>
+                                            <option>AB-</option>
+                                            <option>A+</option>
+                                            <option>A-</option>
+                                            <option>B+</option>
+                                            <option>B-</option>
+
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Nationality
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="nationality" type="text" class="text-lg text-gray-900">
+                                            <option>Select nationality</option>
+                                            <option>Bangladeshi</option>
+                                            <option>Non-Bangladeshi</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Date Of Birth:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input type="date" id="dob" type="text" class="text-lg text-gray-900">
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Mobile:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="mobile" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Email:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input type="email" required id="email" type="text"
+                                               class="text-lg text-gray-900" placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Gender:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="gender" type="text" class="text-lg text-gray-900">
+                                            <option>Select gender</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Level:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="level" type="text" class="text-lg text-gray-900">
+                                            <option>Select level</option>
+                                            <option>4</option>
+                                            <option>3</option>
+                                            <option>2</option>
+                                            <option>1</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Enrolled Semester
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="semester" type="text" class="text-lg text-gray-900">
+                                            <option>Select enrolled semester</option>
+                                            <option>Spring 2015</option>
+                                            <option>Fall 2015</option>
+                                            <option>Spring 2016</option>
+                                            <option>Fall 2016</option>
+                                            <option>Spring 2017</option>
+                                            <option>Fall 2017</option>
+                                            <option>Spring 2018</option>
+                                            <option>Fall 2018</option>
+                                            <option>Spring 2019</option>
+                                            <option>Fall 2019</option>
+                                            <option>Spring 2020</option>
+                                            <option>Fall 2020</option>
+                                            <option>Spring 2021</option>
+                                            <option>Fall 2021</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="w-full md:w-1/2 xl:w p-6">
+
+
+            <div class="flex flex-col">
+                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+
+                                <thead class="bg-gray-100">
+
+                                </thead>
+
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Current Status:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="current" type="text" class="text-lg text-gray-900">
+                                            <option>Select status</option>
+                                            <option>Current</option>
+                                            <option>Graduated</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Father's Name:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="faname" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Father's Profession:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="faprof" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Mother's Name:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="moname" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Mother's Profession:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="moprof" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Guardian's Name:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="guardian_name" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Guardian's Mobile No:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="guardian_mobile" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Present Address:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="present_address" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Permanent Address:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="permanent_address" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Payment Status:
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="payment" type="text" class="text-lg text-gray-900">
+                                            <option>Select payment status</option>
+                                            <option>Fully Paid</option>
+                                            <option>With Dues</option>
+                                            <option>Unpaid</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Password
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <input id="pass" type="text" class="text-lg text-gray-900"
+                                               placeholder="Enter..."/>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+
+                                            <div class="ml-4">
+                                                <div class="text-lg font-medium text-gray-900">
+                                                    Term
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-12 py-4 whitespace-nowrap">
+                                        <select id="term" type="text" class="text-lg text-gray-900">
+                                            <option>Select term</option>
+                                            <option>I</option>
+                                            <option>II</option>
+                                        </select>
+                                    </td>
+
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <table>
+        <tr>
+            <button id="add"
+                    class="w-6/12 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Update Student
+            </button>
+            <button id="reset"
+                    class="w-6/12 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded">
+                Reset Data
+            </button>
+        </tr>
+        <tr>
+            <button id="back"
+                    class="w-full bg-yellow-900 hover:bg-yellow-800 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded">
+                Back
+            </button>
+        </tr>
+    </table>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+    function toggleDD(myDropMenu) {
+        document.getElementById(myDropMenu).classList.toggle("invisible");
+    }
+
+    function filterDD(myDropMenu, myDropMenuSearch) {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById(myDropMenuSearch);
+        filter = input.value.toUpperCase();
+        div = document.getElementById(myDropMenu);
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.drop-button') && !event.target.matches('.drop-search')) {
+            var dropdowns = document.getElementsByClassName("dropdownlist");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (!openDropdown.classList.contains('invisible')) {
+                    openDropdown.classList.add('invisible');
+                }
+            }
+        }
+    }
+</script>
+
+
+</body>
+
+</html>

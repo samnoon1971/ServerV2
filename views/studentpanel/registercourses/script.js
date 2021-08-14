@@ -9,6 +9,7 @@ $(document).ready(function () {
     console.log(dept);
     console.log(level);
     console.log(term);
+
     function send() {
         let sendData = {
             dept: dept,
@@ -43,9 +44,6 @@ $(document).ready(function () {
     send();
 
 
-
-
-
     function get() {
         let sendData = {
             id: id,
@@ -56,7 +54,7 @@ $(document).ready(function () {
             dataType: "json",
             contentType: "application/json",
             success: function (data) {
-                alert("Message: "  + " Already Registered");
+                alert("Message: " + " Already Registered");
             },
             /*
             error: function (data) {
@@ -71,13 +69,12 @@ $(document).ready(function () {
     get();
 
 
-
-
     $("#add").click(() => {
         $(this).data("clicked", true);
         console.log("Clicked");
         let allCourse = $("#courses").val();
         console.log(allCourse);
+
         function send() {
             let sendData = {
                 id: id,
@@ -93,13 +90,14 @@ $(document).ready(function () {
                     console.log(data);
 
                 },
-                error: function(data) {
+                error: function (data) {
                     let err = jQuery.parseJSON(data.responseText);
                     alert("Message: " + err.message);
                 },
                 data: JSON.stringify(sendData),
             });
         }
+
         send();
     })
 

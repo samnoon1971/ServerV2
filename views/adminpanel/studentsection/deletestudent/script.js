@@ -6,7 +6,7 @@ $(document).ready(function () {
     $("#back").click(() => {
         $(this).data("clicked", true);
         console.log("Clicked");
-        window.location.replace("../findstudent/findstudent.html");
+        window.location.replace("/views/admin/student");
     })
 
     $("#searchbutton").click(() => {

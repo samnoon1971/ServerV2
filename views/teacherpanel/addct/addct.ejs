@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Add class test</title>
+    <script src="/public/jquery-3.6.0.min.js"></script>
+    <script src="/views/teacherpanel/addct/script.js"></script>
+    <link rel="stylesheet" href="/public/themes/bootstrap-3/css/bootstrap.min.css">
+    <link rel="icon" href="/public/logo.png" type="image/icon type">
+
+    <link rel="stylesheet" href="/public/themes/fontawesome/css/fontawesome.min.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="/public/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="/public/filestyle.css">
+
+</head>
+<body>
+<div class="container">
+
+    <div class="bg-blue" style="text-align: center">
+
+        <h2 style="width: 100%; margin: 0 auto; text-align: center">Teacher Panel</h2>
+
+    </div>
+    <div class="bg-green" style="text-align: center">
+
+        <h2 style="width: 100%; margin: 0 auto; text-align: center">CT Marks File Upload</h2>
+
+    </div>
+
+
+    <h1>File Upload</h1>
+    <form id='form'>
+        <div class="input-group">
+            <label>Course Code</label>
+            <input type="text" id="code" placeholder="Enter Course Code" class="form-control mb-3 required">
+
+        </div>
+        <div class="input-group">
+            <label>CT No:</label>
+            <input type="number" id="ct" placeholder="Enter Number of CT Taken" class="form-control mb-3 required">
+
+        </div>
+        <div class="input-group">
+            <label for='files'>Select class test files</label>
+            <input id='files' type="file" multiple>
+        </div>
+        <button id="submit" class="submit-btn" type='submit'>Upload</button>
+    </form>
+
+</div>
+<script src="script.js"></script>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+</body>
+</html>

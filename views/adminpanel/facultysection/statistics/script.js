@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     console.log("Ready");
     let ctx1 = $("#pie-chartcanvas-1");
@@ -49,7 +48,7 @@ $(document).ready(function () {
                                 "#A9A9A9",
                                 "#DC143C",
                                 "#F4C460",
-                                "#2E8B57",
+                                "#6E8Bf7",
                                 "#3E8B23"
                             ],
                             borderColor: [
@@ -66,7 +65,6 @@ $(document).ready(function () {
                 };
 
 
-
                 chart1 = new Chart(ctx1, {
                     type: "pie",
                     data: data1,
@@ -78,6 +76,7 @@ $(document).ready(function () {
 
         });
     }
+
     send();
 
 })

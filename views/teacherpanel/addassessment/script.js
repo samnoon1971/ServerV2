@@ -4,8 +4,8 @@ form.addEventListener("submit", submitForm);
 
 function submitForm(e) {
     e.preventDefault();
-   const files = document.getElementById("files");
-   const name = document.getElementById("code").value;
+    const files = document.getElementById("files");
+    const name = document.getElementById("code").value;
     const formData = new FormData();
 
     formData.append("files", files.files[0], "Assessment" + "_" + name + ".pdf");
@@ -18,8 +18,8 @@ function submitForm(e) {
             clearFileInput("files"))
         .catch((err) => ("Error occured", err));
 }
-function clearFileInput(id)
-{
+
+function clearFileInput(id) {
     let oldInput = document.getElementById(id);
 
     let newInput = document.createElement("input");

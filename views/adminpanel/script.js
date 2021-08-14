@@ -1,14 +1,13 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
+$(document).ready(function () {
+    console.log("ready!");
     $("#submit").click(() => {
         $(this).data('clicked', true);
-       // window.location.replace("./studentdashboard.html");
+        // window.location.replace("./studentdashboard.html");
         console.log("clicked");
-        if($("#id").val() === "admin" && $("#password").val() === "pass"){
+        if ($("#id").val() === "admin" && $("#password").val() === "pass") {
             window.location.replace("./admincontrol/adminmenu.html");
             console.log("done");
-        }
-        else {
+        } else {
             $("#id").val("");
             $("#password").val("");
 

@@ -8,9 +8,9 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use( express.static( "public" ) );
 app.use(express.static("docs"));
-/*
-app.use("/", require("./ViewEngines"));
-*/
+
+app.use("/views", require("./ViewEngines"));
+
 app.use("/registration", require("./RegRoutes"));
 app.use("/download", require("./DownloadRoutes"));
 app.use("/upload", require("./UploadRoutes"));

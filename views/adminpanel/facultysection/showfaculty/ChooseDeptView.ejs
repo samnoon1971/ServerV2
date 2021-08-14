@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Faculty</title>
+
+    <script src="/public/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="/public/themes/bootstrap-3/css/bootstrap.min.css">
+    <link rel="icon" href="/public/logo.png" type="image/icon type">
+
+    <link rel="stylesheet" href="/public/themes/fontawesome/css/fontawesome.min.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="/public/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+
+
+<div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
+
+
+    <div class="container">
+        <div class="bg-green" style="text-align: center">
+
+            <h2 style="width: 50%; margin: 0 auto; text-align: center">University Management System</h2>
+            <h2 style="width: 50%; margin: 0 auto; text-align: center">Show Faculty Panel</h2>
+        </div>
+        <div class="bg-gray-800 pt-1">
+            <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-2 shadow text-2xl text-white">
+                <div class="flex justify-center bg-orange flex text-center">
+                    <h3 class="font-bold pl-2">Choose Faculty</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-12">
+            <div class="card-box bg-blue">
+
+                <div class="inner" style="text-align: center">
+                    <form>
+                        <label for="searchbar">Select Department</label>
+                        <select class="form-control" id="searchbar">
+                            <option>All</option>
+                            <option>CSE</option>
+                            <option>EEE</option>
+                            <option>CE</option>
+                            <option>BBA</option>
+                            <option>English</option>
+                            <option>Law</option>
+                        </select>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="container">
+            <button class="col-lg-6 col-sm-12 btn-lg bg-green center-block" id="searchbutton">View</button>
+
+            <button class="col-lg-6 col-sm-12 btn-lg bg-red center-block" id="back">Back to menu</button>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        console.log("Ready");
+        $("#searchbutton").click(() => {
+            $(this).data("clicked", true);
+            console.log("Clicked");
+            let dept = $("#searchbar").val();
+            localStorage.setItem("dept", dept);
+
+            window.location.replace("/views/admin/faculty/all");
+        })
+
+
+        $("#back").click(() => {
+            $(this).data("clicked", true);
+            console.log("Clicked");
+            window.location.replace("/views/admin/faculty/dashboard");
+        })
+
+    })
+
+</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+    function toggleDD(myDropMenu) {
+        document.getElementById(myDropMenu).classList.toggle("invisible");
+    }
+
+    function filterDD(myDropMenu, myDropMenuSearch) {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById(myDropMenuSearch);
+        filter = input.value.toUpperCase();
+        div = document.getElementById(myDropMenu);
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.drop-button') && !event.target.matches('.drop-search')) {
+            var dropdowns = document.getElementsByClassName("dropdownlist");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (!openDropdown.classList.contains('invisible')) {
+                    openDropdown.classList.add('invisible');
+                }
+            }
+        }
+    }
+</script>
+
+
+</body>
+</html>

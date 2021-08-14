@@ -1,8 +1,9 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
+$(document).ready(function () {
+    console.log("ready!");
     $("#submit").click(() => {
         $(this).data('clicked', true);
-      console.log("clicked");
+        console.log("clicked");
+
         function send() {
             let student = {
                 id: $("#id").val().toString(),
@@ -20,11 +21,10 @@ $( document ).ready(function() {
                     const pass = $("#password").val().toString();
                     console.log(newData);
                     console.log(pass);
-                    if(newData === pass){
+                    if (newData === pass) {
                         localStorage.setItem("id", $("#id").val());
                         window.location.replace("./studentmenu/studentmenu.html");
-                    }
-                    else{
+                    } else {
                         alert("Wrong Credentials");
                         $("#id").val("");
                         $("#password").val("");
@@ -33,6 +33,7 @@ $( document ).ready(function() {
                 data: JSON.stringify(student)
             });
         }
+
         send();
     });
 

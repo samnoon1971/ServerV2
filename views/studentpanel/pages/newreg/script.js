@@ -10,7 +10,7 @@ $(document).ready(function () {
             contentType: "application/json",
             success: function (data) {
                 let rows = "";
-                for(let index=0; index<data.length; index++) {
+                for (let index = 0; index < data.length; index++) {
                     let name = data[index].name;
                     let code = data[index].code;
                     let credit = data[index].credit;
@@ -21,12 +21,13 @@ $(document).ready(function () {
                 console.log(rows);
                 $("#tblStudents tbody").append(rows);
             },
-            error: function(data) {
+            error: function (data) {
                 let err = jQuery.parseJSON(data.responseText);
                 alert("Message: " + err.message);
             }
         });
     }
+
     send();
     $("#back").click(() => {
         $(this).data("clicked", true);
