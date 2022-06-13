@@ -29,7 +29,7 @@ pipeline {
         stage('deploy') {
             steps {
                  sh '''#!/bin/bash
-                 ansible -i /etc/ansible/hosts localhost -a "grep ^root: /etc/shadow"  -b
+                 ansible /etc/ansible/hosts localhost -a "grep ^root: /etc/shadow"  -b
             '''
                 sh '''#!/bin/bash
                 ansible-playbook /home/jenkins/aero_ansible.yml
