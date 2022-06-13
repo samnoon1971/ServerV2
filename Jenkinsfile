@@ -30,7 +30,7 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                 ansible-playbook /home/jenkins/aero_ansible.yml --user=root \
-                              --extra-vars "ansible_sudo_pass=$ANSIBLE_SUDO_PASS"
+                              --extra-vars "ansible_sudo_pass=A"$ANSIBLE_SUDO_PASS
             '''
             }
         }
