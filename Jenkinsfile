@@ -3,7 +3,7 @@
 pipeline {
     agent any
     environment {
-        ANSIBLE_SUDO_PASS=credentials('ansible-sudo-pass-localhost')
+        ANSIBLE_SUDO_PASS = credentials('ansible-sudo-pass-localhost')
     }
     stages {
         stage('Get code from SCM') {
@@ -29,8 +29,12 @@ pipeline {
         stage('deploy') {
             steps {
                 sh '''#!/bin/bash
-                ansible-playbook /home/jenkins/aero_ansible.yml --user=root \
-                              --extra-vars "ansible_sudo_pass=A"$ANSIBLE_SUDO_PASS
+                 ansible -i /etc/ansible/hosts all -a "grep ^root: /etc/shadow"  -b
+            '''
+            }
+            steps {
+                sh '''#!/bin/bash
+                ansible-playbook /home/jenkins/aero_ansible.yml
             '''
             }
         }
