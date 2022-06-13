@@ -3,7 +3,7 @@
 pipeline {
     agent any
     environment {
-        ANSIBLE_SUDO_PASS=credentias('ansible-sudo-pass-localhost')
+        ANSIBLE_SUDO_PASS=credentials('ansible-sudo-pass-localhost')
     }
     stages {
         stage('Get code from SCM') {
