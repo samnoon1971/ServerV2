@@ -36,7 +36,9 @@ A portal for university management
 
 - Add more integrations
 
+- Add more mobile responsiveness support
 
+- Add API Documentation
 
 ## Deployment
 
