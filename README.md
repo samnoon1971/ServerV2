@@ -2,7 +2,7 @@
 
 # Server v2
 
-A portal for university management
+A portal for university management (Made as part of academic curriculum)
 
 
 ## Badges
