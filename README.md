@@ -18,6 +18,18 @@ A portal for university management (Made as part of academic curriculum)
 - Student Portal
 - Teacher Portal (Under Development)
 
+## User Interface
+<div align="center">
+<img src="https://github.com/samnoon1971/ServerV2/blob/main/public/images/ui/image22.png" width=80% height=80% />
+<img src="https://github.com/samnoon1971/ServerV2/blob/main/public/images/ui/image6.png" width=80% height=80% />
+<img src="https://github.com/samnoon1971/ServerV2/blob/main/public/images/ui/image7.png" width=80% height=80% />
+<img src="https://github.com/samnoon1971/ServerV2/blob/main/public/images/ui/image8.png" width=80% height=80% />
+<img src="https://github.com/samnoon1971/ServerV2/blob/main/public/images/ui/image15.png" width=80% height=80% />
+<img src="https://github.com/samnoon1971/ServerV2/blob/main/public/images/ui/image3.png" width=80% height=80% />
+<img src="https://github.com/samnoon1971/ServerV2/blob/main/public/images/ui/image13.png" width=80% height=80% />
+
+</div>
+
 ## Tech Stack
 
 **Client:** HTML, CSS, jQuery, Bootstrap
