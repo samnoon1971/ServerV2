@@ -60,12 +60,6 @@ To deploy this project run
 ```
 
 
-## FAQ
-
-#### What is the project for?
-
-It was developed as part of web developement sessional course
-
 
 ## Run Locally without Docker
 
@@ -101,6 +95,12 @@ Contributions are always welcome!
 See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
+
+## FAQ
+
+#### What is the project for?
+
+It was developed as part of web developement sessional course
 
 
 ## Support
