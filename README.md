@@ -52,12 +52,21 @@ A portal for university management (Made as part of academic curriculum)
 
 - Add API Documentation
 
-## Deployment
+
+## Build using Docker
+
+To build this project run
+
+```bash
+  npm run build
+```
+
+## Deployment using Docker
 
 To deploy this project run
 
 ```bash
-  npm run deploy
+  docker run -d -p 3000:3000 samnoon/server_v2
 ```
 
 
@@ -68,7 +77,7 @@ To deploy this project run
 It was developed as part of web developement sessional course
 
 
-## Run Locally
+## Run Locally without Docker
 
 Clone the project
 
