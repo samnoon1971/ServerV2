@@ -48,7 +48,7 @@ A portal for university management (Made as part of academic curriculum)
 To build this project run
 
 ```bash
-  npm run build
+docker build . -t samnoon/server_v2
 ```
 
 ## Deployment using Docker
