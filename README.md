@@ -90,8 +90,9 @@ Open web browser at following URL:
 ```
 http://localhost:3000/views/login
 ```
-Default Admin Username: admin
-Default Admin Password: pass
+Default Admin Username: `admin`
+
+Default Admin Password: `pass`
 
 ## Contributing
 
