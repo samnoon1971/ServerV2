@@ -1,8 +1,10 @@
 body {
-    padding-top: 90px;
+    width: 100%;
 }
 
-
+body > div {
+    height: 40%;
+}
 .panel-student {
     border-color: #ccc;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
@@ -125,3 +127,4 @@ body {
 .bg-red {
     background-color: #d9534f !important;
 }
+

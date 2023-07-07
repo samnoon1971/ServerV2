@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,75 +19,71 @@
     <link rel="stylesheet" href="/public/themes/bootstrap-3/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="/public/themes/fontawesome/css/fontawesome.min.css">
-    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.0/tailwind.min.css" integrity="sha512-ksC7McuoU4VJ07WGtca5INyDRXzGsmhyEEJYzoWBkjC/KwuG+IK/pFnxJFNIGmOd8pmGexOxd3FziCPZXQJ4lA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/public/Chart.bundle.min.js"></script>
     <link rel="stylesheet" href="/public/styles.css">
 </head>
+
 <body>
-<div class="container">
-    <div class="bg-green" style="text-align: center">
+        <div class="bg-green" style="text-align: center">
 
-        <h4 style="width: 50%; margin: 0 auto; text-align: center">Bangladesh Army International University of Science and Technology</h4>
+            <h4 style="width: 50%; margin: 0 auto; text-align: center; height: 60px;">Bangladesh Army International
+                University of Science and Technology</h4>
 
-    </div>
+        </div>
 
 
-    <div class="row">
-        <div class="column">
-        <div class="col-lg-3 col-sm-12">
-            <div class="card-box bg-green">
+        <div class="row">
+            <div class="col-12">
+                <div class="card-box bg-green">
+                    <div class="inner">
+                        <h3>Show All Faculty</h3>
+                        <p></p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-calculator" aria-hidden="true"></i>
+                    </div>
+                    <a href="/views/admin/faculty/show" class="card-box-footer" id="show">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <div class="card-box bg-red">
+                    <div class="inner">
+                        <h3>Remove Faculty</h3>
+                        <p></p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                    </div>
+                    <a href="/views/admin/faculty/remove" class="card-box-footer" id="delete">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card-box bg-mati">
+                    <div class="inner">
+                        <h3>Add Faculty</h3>
+                        <p></p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </div>
+                    <a href="/views/admin/faculty/add" class="card-box-footer" id="add">View More <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12">
+            <div class="card-box bg-blue">
                 <div class="inner">
-                    <h3>Show All Faculty</h3>
-                    <p></p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-calculator" aria-hidden="true"></i>
-                </div>
-                <a href="/views/admin/faculty/show" class="card-box-footer" id="show">View More <i
+                    <a href="/views/admin/faculty/" class="card-box-footer" id="back">Back to previous menu <i
                             class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-
-
-        <div class="col-lg-3 col-sm-12">
-            <div class="card-box bg-red">
-                <div class="inner">
-                    <h3>Remove Faculty</h3>
-                    <p></p>
                 </div>
-                <div class="icon">
-                    <i class="fa fa-edit" aria-hidden="true"></i>
-                </div>
-                <a href="/views/admin/faculty/remove" class="card-box-footer" id="delete">View More <i
-                            class="fa fa-arrow-circle-right"></i></a>
             </div>
-        </div>
-        </div>
-        <div class="column">
-        <div class="col-lg-3 col-sm-12">
-            <div class="card-box bg-mati">
-                <div class="inner">
-                    <h3>Add Faculty</h3>
-                    <p></p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                </div>
-                <a href="/views/admin/faculty/add" class="card-box-footer" id="add">View More <i
-                            class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        </div>
-    <div class="col-lg-3 col-sm-12">
-        <div class="card-box bg-blue">
-            <div class="inner">
-                <a href="/views/admin/faculty/" class="card-box-footer" id="back">Back to previous menu <i
-                            class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
 </body>
+
 </html>
