@@ -86,7 +86,11 @@ Start the server
 ```bash
   node server
 ```
+Open web browser at following URL:
 
+```
+http://localhost:3000/views/login
+```
 
 ## Contributing
 
