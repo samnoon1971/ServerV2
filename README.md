@@ -17,7 +17,8 @@ A portal for university management (Made as part of academic curriculum)
 - Student Portal
 - Teacher Portal (Under Development)
 
-
+## Tutorial (Installation & Setup)
+[![Watch the video](https://img.youtube.com/vi/w5yzR-YInZs/maxresdefault.jpg)](https://youtu.be/w5yzR-YInZs)
 
 ## Tech Stack
 
